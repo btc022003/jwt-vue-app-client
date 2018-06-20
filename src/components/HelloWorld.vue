@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <router-link :to="{name: 'News', query: { type: 'current' }}">News</router-link>
     <ul>
       <li>
         <a
