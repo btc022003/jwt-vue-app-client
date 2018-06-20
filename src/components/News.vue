@@ -3,14 +3,14 @@
     <h5>当前计数值为:{{count}}</h5>
     <button @click="$store.commit('add')">加一</button>
     <button @click="$store.commit('add', { step: 2 })">加二</button>
-    <button @click="$store.dispatch('addActionAsync', { step: 3 })">异步加3</button>
+    <button @click="addActionAsync({ step: 3 })">异步加3</button>
     <ul>
       <li v-for="item in news" @click="clickHandle(item.id)" :key="item.id">{{item.title}}</li>
     </ul>
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   data() {
@@ -30,6 +30,7 @@ export default {
     ...mapState(['count']),
   },
   methods: {
+    ...mapActions(['addActionAsync']),
     clickHandle(id) {
       this.$router.push({
         name: 'NewsDetail',
