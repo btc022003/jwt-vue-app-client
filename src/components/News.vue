@@ -1,5 +1,7 @@
 <template>
   <div class="news">
+    <h5>当前计数值为:{{$store.state.count}}</h5>
+    <button @click="$store.commit('add')">加一</button>
     <ul>
       <li v-for="item in news" @click="clickHandle(item.id)" :key="item.id">{{item.title}}</li>
     </ul>
