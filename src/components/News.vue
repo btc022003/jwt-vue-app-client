@@ -1,8 +1,8 @@
 <template>
   <div class="news">
     <h5>当前计数值为:{{count}}</h5>
-    <button @click="$store.commit('add')">加一</button>
-    <button @click="$store.commit('add', { step: 2 })">加二</button>
+    <button @click="addActionSync()">加一</button>
+    <button @click="addActionSync({ step: 2 })">加二</button>
     <button @click="addActionAsync({ step: 3 })">异步加3</button>
     <ul>
       <li v-for="item in news" @click="clickHandle(item.id)" :key="item.id">{{item.title}}</li>
@@ -27,10 +27,10 @@ export default {
     console.log(this.$route);
   },
   computed: {
-    ...mapState(['count']),
+    ...mapState('counter', ['count']),
   },
   methods: {
-    ...mapActions(['addActionAsync']),
+    ...mapActions('counter', ['addActionAsync', 'addActionSync']),
     clickHandle(id) {
       this.$router.push({
         name: 'NewsDetail',
