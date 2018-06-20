@@ -3,6 +3,31 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import store from './store';
+
+// const store = new Vuex.Store({
+//   state: {
+//     count: 1,
+//   },
+//   mutations: {
+//     add(state, payload) {
+//       console.log(payload);
+//       if (payload) {
+//         state.count += payload.step;
+//       } else {
+//         state.count += 1;
+//       }
+//     },
+//   },
+//   actions: {
+//     addActionAsync({ commit }, payload) {
+//       setTimeout(() => {
+//         commit('add', payload);
+//       }, 1000);
+//     },
+//   },
+// });
+// store.commit('add');
 
 Vue.config.productionTip = false;
 
@@ -10,6 +35,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
 });
