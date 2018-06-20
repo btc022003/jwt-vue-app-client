@@ -7,13 +7,13 @@
 export default {
   data() {
     return {
-      id: ''
+      id: '',
     };
   },
   created() {
     this.id = this.$route.query.id;
     console.log(this.$route.query);
   },
-}
+};
 </script>
 
