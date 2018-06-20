@@ -3,6 +3,9 @@ import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
 import News from '../components/News';
 import NewsDetail from '../components/NewsDetail';
+import Reg from '../components/Reg';
+import Todo from '../components/TodoList';
+import Login from '../components/Login';
 
 Vue.use(Router);
 const router = new Router({
@@ -19,6 +22,18 @@ const router = new Router({
       path: '/news_detail',
       name: 'NewsDetail',
       component: NewsDetail,
+    }, {
+      path: '/reg',
+      name: 'Reg',
+      component: Reg,
+    }, {
+      path: '/todo',
+      name: 'TodoList',
+      component: Todo,
+    }, {
+      path: '/login',
+      name: 'Login',
+      component: Login,
     },
   ],
 });
