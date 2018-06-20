@@ -5,7 +5,7 @@ import News from '../components/News';
 import NewsDetail from '../components/NewsDetail';
 
 Vue.use(Router);
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/', // 路径，在url地址栏中显示
@@ -22,3 +22,11 @@ export default new Router({
     },
   ],
 });
+router.beforeEach(((to, from, next) => {
+  console.log(to);
+  console.log(from);
+  console.log(next);
+  next();
+}));
+export default router;
+
